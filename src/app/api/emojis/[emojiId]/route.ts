@@ -5,7 +5,7 @@ import { NextRequest } from "next/server";
 
 export async function POST(
   _req: NextRequest,
-  { params }: { params: { emojiId: string } }
+  { params }: { params: Promise<{ emojiId: string }> }
 ) {
   const { emojiId } = await params;
   if (!emojiId)
