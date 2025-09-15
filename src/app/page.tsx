@@ -11,7 +11,7 @@ interface Emoji {
 
 async function fetchEmojis(): Promise<Emoji[]> {
   // console.log("fetchEmojis called ---");
-  const response = await fetch("http://localhost:3000/api/emojis");
+  const response = await fetch("/api/emojis");
   const result = await response.json();
   if (result.status === "ok") {
     return result.data;

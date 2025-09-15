@@ -26,12 +26,9 @@ export default function EmojiItem({
     try {
       setIsVoting(true);
 
-      const response = await fetch(
-        `http://localhost:3000/api/emojis/${emoji.id}`,
-        {
-          method: "POST",
-        }
-      );
+      const response = await fetch(`/api/emojis/${emoji.id}`, {
+        method: "POST",
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
